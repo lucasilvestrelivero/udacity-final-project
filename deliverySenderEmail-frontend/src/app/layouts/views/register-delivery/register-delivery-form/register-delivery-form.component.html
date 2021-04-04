@@ -1,0 +1,81 @@
+<div class="container-child">
+
+  <mat-toolbar color="accent">
+    <mat-toolbar-row class="toolbar-list">
+      <span class="span-toolbar-list">Delivery Confirmation Form</span>
+      <span class="spacer-toolbar-list"></span>
+      <div class="header-add-btn">
+        <button (click)="back()" mat-raised-button>Back</button>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <div class="container-below">
+    <mat-card class="mat-elevation-z4">
+      <mat-card-content>
+        <form class="form" [formGroup]="form">
+
+          <mat-form-field class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+            <mat-label>Client</mat-label>
+            <mat-select formControlName="client" required>
+              <ngx-mat-select-search (keyup)="searchClient($event.target.value)"
+                noEntriesFoundLabel="No records found" placeholderLabel="search">
+                </ngx-mat-select-search>
+              <mat-option *ngFor="let obj of clientFilter" [value]="obj">
+                {{ obj?.name }}
+              </mat-option>
+              <mat-option *ngIf="clientFilter.length === 0" value="" disabled>
+                No records found
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="client.invalid && (client.dirty || client.touched)">
+              <mat-error *ngIf="client.hasError('required')">
+                Client is riquired
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <textarea name="observation" formControlName="observation" matInput
+            cdkTextareaAutosize
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5"
+            maxlength="255"
+            placeholder="Observation"></textarea>
+          </mat-form-field>
+
+
+          <div class="file-container">
+            <input style="display: none;" id="input-file-id" type="file" accept="image/*" (change)="onFileSelected($event)" />
+            <label class="file-btn" for="input-file-id">Choose Files</label>
+            <span class="file-warn">Limit of 3 images and 1MB per image</span>
+          </div>
+
+          <div class="file-list">
+            <div class="file-item" *ngFor="let obj of files">
+              <div class="file-item-content">
+                <span>name: {{obj.name}}</span>
+                <span>Size: {{ (obj.size / (1024*1024)) | number:'1.2-2' }} MB</span>
+              </div>
+              <button mat-icon-button class="btn-view-file" (click)="openDialog(obj)" matTooltip="View File">
+                <mat-icon>visibility</mat-icon>
+              </button>
+            </div>
+          </div>
+
+
+        </form>
+      </mat-card-content>
+
+      <mat-card-actions class="row card-actions">
+        <button class="float-rigth-lg float-rigth-md btn-save-or-update" mat-raised-button
+          [disabled]="!form.valid || isSaving" (click)="saveOrUpdate()">
+           Save
+        </button>
+        <button class="float-rigth-lg float-rigth-md btn-cancel" mat-raised-button (click)="back()">
+          Cancel
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

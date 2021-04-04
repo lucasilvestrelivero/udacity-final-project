@@ -1,0 +1,28 @@
+.background-login {
+  margin: 0 auto;
+}
+
+.card-login {
+  text-align: center;
+}
+
+mat-card-header {
+  display: block;
+  margin-bottom: 20px;
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.register-btn {
+  margin-top: 15px;
+}
+
+.register-btn a {
+  cursor: pointer;
+  text-decoration: underline;
+  color: blue;
+}

@@ -1,0 +1,11 @@
+<div class="container-view">
+  <span class="view-item">Delivery Id: {{ data.deliveryId }}</span>
+  <span class="view-item">Client: {{ data.client.name }}</span>
+  <span class="view-item">Create Date: {{ data.client.createdAt | date: 'yyyy-MM-dd' }}</span>
+  <span class="attachment-title">List of Attachments</span>
+  <mat-dialog-content class="container-images">
+    <div class="image-item" *ngFor="let item of data.attachments">
+        <img class="image-size" [src]="item" alt="attachment file">
+    </div>
+  </mat-dialog-content>
+</div>

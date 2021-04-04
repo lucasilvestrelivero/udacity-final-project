@@ -1,0 +1,22 @@
+.container-view {
+  display: flex;
+  flex-direction: column;
+  flex: 1 auto;
+  align-items: baseline;
+}
+
+.container-images {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.attachment-title {
+  margin-top: 8px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.image-size {
+  max-width: 200px;
+}

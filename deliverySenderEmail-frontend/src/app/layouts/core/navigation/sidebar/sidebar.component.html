@@ -1,0 +1,32 @@
+<div class="main-container">
+    <app-navbar (toggleSidenav)="navigationSidenav.toggle()"></app-navbar>
+
+    <mat-sidenav-container autosize>
+        <mat-sidenav id="sidenav" #navigationSidenav mode="side" [opened]="true" role="navigation" class="mat-elevation-z2">
+            <perfect-scrollbar>
+
+              <div class="user-content">
+                <img mat-card-avatar src="./assets/img/avatar.png">
+                <span class="user-name">{{ user }}</span>
+            </div>
+
+                <mat-divider></mat-divider>
+
+                <mat-nav-list *ngFor="let item of router">
+                  <mat-list-item [routerLink]="[item.path]" routerLinkActive="selected">
+                      <mat-icon matListIcon>{{item.icon}}</mat-icon>
+                      <a class="font-settings" matLine>{{item.title}}</a>
+                      <mat-divider></mat-divider>
+                  </mat-list-item>
+                </mat-nav-list>
+
+            </perfect-scrollbar>
+        </mat-sidenav>
+
+        <mat-sidenav-content role="main">
+            <perfect-scrollbar>
+                <router-outlet></router-outlet>
+            </perfect-scrollbar>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

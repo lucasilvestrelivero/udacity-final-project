@@ -1,0 +1,144 @@
+@import './assets/material-theming/app-theme.scss';
+
+/* Main Page */
+.main-container {
+  display: flex !important;
+  flex-direction: column;
+  flex: 1 auto;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  min-height: 100%;
+}
+app-navbar-main-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+.container-content {
+  margin-top: 66px;
+}
+.mat-elevation-z6 {
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  div.content {
+    padding: 10px;
+    flex: 1;
+    &:nth-child(even) {
+      background-color: red !important;
+    }
+    &:nth-child(odd) {
+      background-color: blue !important;
+    }
+  }
+}
+
+// Dispositivos extra small (telefones em modo retrato, com menos de 576px)
+@media (max-width: 575.98px) {
+  .hide-sm {
+    display: none !important;
+  }
+}
+
+// Dispositivos small (telefones em modo paisagem, com 576px ou mais)
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .hide-all-not-sm {
+    display: none !important;
+  }
+}
+
+// Dispositivos médios (tablets com 768px ou mais)
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hide-all-not-sm {
+    display: none !important;
+  }
+}
+
+// Dispositivos large (desktops com 992px ou mais)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .hide-all-not-sm {
+    display: none !important;
+  }
+}
+
+// Dispositivos extra large (desktops grandes com 1200px ou mais)
+@media (min-width: 1200px) {
+  .hide-all-not-sm {
+    display: none !important;
+  }
+}
+
+/* Code below is for angular material */
+.mat-drawer-container {
+  flex: 1;
+}
+/*Code above is for angular material */
+
+app-login {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.list-action, .btn-action {
+  text-align: end !important;
+}
+
+.header-add-btn {
+  display: flex;
+  flex: 1;
+  flex-direction: row-reverse;
+}
+
+// Table
+table {
+  width: 100%;
+
+
+  .icon {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+  }
+}
+
+
+form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.panel {
+  background: none !important;
+  max-width: none !important;
+  .mat-dialog-container {
+    background: none !important;
+  }
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.cdk-overlay-pane {
+  margin: 0 auto !important;
+  text-align: center !important;
+}

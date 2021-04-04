@@ -1,0 +1,47 @@
+mat-toolbar {
+  height: 50px !important;
+  min-height: 50px !important;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+mat-toolbar-row {
+  padding: 0;
+}
+
+.padding-icon {
+  padding: 0 0 0 0px;
+  cursor: pointer;
+}
+
+.padding-logo {
+  padding-left: 15px;
+}
+
+/* toolbar settings */
+.spacer-toolbar {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon-toolbar {
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.btn-toolbar {
+  width: auto !important;
+  padding: 0 10px !important;
+}
+
+.img-content {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+}
