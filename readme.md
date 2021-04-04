@@ -1,5 +1,5 @@
-frontend URL: http://deliverysenderemail-frontapp.s3-website-sa-east-1.amazonaws.com/
-backend URL: https://ag1oe9hmtc.execute-api.sa-east-1.amazonaws.com/dev/
+* frontend URL: http://deliverysenderemail-frontapp.s3-website-sa-east-1.amazonaws.com/
+* backend URL: https://ag1oe9hmtc.execute-api.sa-east-1.amazonaws.com/dev/
 
 Project overview
 * The purpose of this project is to have a list of customers and send delivery confirmations by e-mail with attached receipts.
